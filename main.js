@@ -176,6 +176,7 @@ const createScene = () => {
   // line.connectedControl = rect1;
   let desBox = document.getElementById("desBox");
   desBox.style.left = "100vw";
+
   // desBox.style.display = "none";
   // let canvasZone = document.getElementById("renderCanvas");
   // canvasZone.style.width = "100%";
@@ -212,6 +213,7 @@ const createScene = () => {
   let animationGroup;
 
   document.getElementById("playBtn").addEventListener("click", function () {
+    desBox.style.visibility = "visible";
     // animationGroupA.stop();
     for (let i = 0; i < animationGroup.length; i++) {
       if (animationGroup[i].name.indexOf("Rotation") != -1) {

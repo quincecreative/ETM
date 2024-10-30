@@ -55,6 +55,7 @@ body {
   transition-property: left;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
+  visibility: hidden;
 }
 
 #desVideoBox {
