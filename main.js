@@ -33,7 +33,8 @@ const createScene = () => {
   camera.attachControl(canvas, true);
   camera.wheelDeltaPercentage = 0.01;
   camera.position = new BABYLON.Vector3(0.19522278690950212, 0.32460103474098906, 2.34558162546303);
-  scene.activeCamera.panningSensibility = 800;
+  scene.activeCamera.panningSensibility = 3000;
+  camera.pinchPrecision = 100;
 
   const cameraStartP = new BABYLON.Animation(
     "cameraStart",
