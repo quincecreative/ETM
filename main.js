@@ -212,6 +212,8 @@ const createScene = () => {
   let animationGroup;
 
   document.getElementById("playBtn").addEventListener("click", function () {
+    document.getElementById("desVideoBox").innerHTML =
+      '<video width="100%" height="auto" controls> <source src = "part.mp4" type = "video/mp4" / >Your browser does not support the video tag. </video>';
     // animationGroupA.stop();
     for (let i = 0; i < animationGroup.length; i++) {
       if (animationGroup[i].name.indexOf("Rotation") != -1) {
