@@ -210,6 +210,16 @@ const createScene = () => {
   // rect1.linkOffsetY = -50;
 
   let animationGroup;
+  setTimeout(
+    (document.getElementById("desVideoBox").innerHTML =
+      '<video width="100%" height="auto" controls> <source src = "part.mp4" type = "video/mp4" / >Your browser does not support the video tag. </video>'),
+    3000
+  );
+  setTimeout(
+    (document.getElementById("desVideoBox").innerHTML =
+      '<video width="100%" height="auto" controls> <source src = "part.mp4" type = "video/mp4" / >Your browser does not support the video tag. </video>'),
+    2000
+  );
 
   document.getElementById("playBtn").addEventListener("click", function () {
     document.getElementById("desVideoBox").innerHTML =
