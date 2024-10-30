@@ -182,6 +182,7 @@ const createScene = () => {
   // canvasZone.style.width = "100%";
 
   target.onPointerClickObservable.add(() => {
+    desBox.style.visibility = "visible";
     console.log(desBox.style.left);
     if (desBox.style.left == "100vw") {
       // desBox.style.display = "flex";
@@ -213,7 +214,6 @@ const createScene = () => {
   let animationGroup;
 
   document.getElementById("playBtn").addEventListener("click", function () {
-    desBox.style.visibility = "visible";
     // animationGroupA.stop();
     for (let i = 0; i < animationGroup.length; i++) {
       if (animationGroup[i].name.indexOf("Rotation") != -1) {
