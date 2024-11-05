@@ -35,6 +35,17 @@ const createScene = () => {
   camera.position = new BABYLON.Vector3(0.19522278690950212, 0.32460103474098906, 2.34558162546303);
   scene.activeCamera.panningSensibility = 3000;
   camera.pinchPrecision = 100;
+  camera.minZ = 0;
+
+  const meshAlpha = new BABYLON.Animation(
+    "meshAlpha",
+    "visibility",
+    60,
+    BABYLON.Animation.ANIMATIONTYPE_FLOAT,
+    BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT
+  );
+
+  let keyFramesMA = [];
 
   const cameraStartP = new BABYLON.Animation(
     "cameraStart",
@@ -67,6 +78,19 @@ const createScene = () => {
   let keyFramesT = [];
 
   scene.onBeforeRenderObservable.add(() => {
+    keyFramesMA = [];
+
+    keyFramesMA.push({
+      frame: 0,
+      value: 1,
+    });
+    keyFramesMA.push({
+      frame: 60,
+      value: 0,
+    });
+    meshAlpha.setKeys(keyFramesMA);
+    camera.animations.push(meshAlpha);
+
     keyFramesT = [];
 
     keyFramesT.push({
@@ -212,12 +236,20 @@ const createScene = () => {
   // rect1.linkOffsetY = -50;
 
   let animationGroup;
+  let meshe;
 
-  document.getElementById("playBtn").addEventListener("click", function () {
+  document.getElementById("openBtn").addEventListener("click", function () {
     // animationGroupA.stop();
     for (let i = 0; i < animationGroup.length; i++) {
       if (animationGroup[i].name.indexOf("Rotation") != -1) {
         animationGroup[i].stop();
+      }
+    }
+    for (let i = 0; i < meshe.length; i++) {
+      if (meshe[i].name == "Mesh_1") {
+        if (meshe[i].visibility == 0) {
+          scene.beginDirectAnimation(meshe[i], [meshAlpha], 60, 1, false);
+        }
       }
     }
 
@@ -268,18 +300,57 @@ const createScene = () => {
     //   horn.play();
     // }
   });
+
+  document.getElementById("playBtn").addEventListener("click", function () {
+    if (!opened) {
+      for (let i = 0; i < meshe.length; i++) {
+        if (meshe[i].name == "Mesh_1") {
+          if (meshe[i].visibility != 0) {
+            scene.beginDirectAnimation(meshe[i], [meshAlpha], 1, 60, false);
+          } else {
+            scene.beginDirectAnimation(meshe[i], [meshAlpha], 60, 1, false);
+          }
+        }
+      }
+
+      for (let i = 0; i < animationGroup.length; i++) {
+        if (
+          animationGroup[i].name.indexOf("Rotation") != -1 &&
+          animationGroup[i].name.indexOf("RotationTycanGear5") == -1 &&
+          animationGroup[i].name.indexOf("RotationTycanGear7") == -1 &&
+          animationGroup[i].name.indexOf("RotationTycanGear8") == -1
+        ) {
+          if (animationGroup[i].isStarted) {
+            animationGroup[i].stop();
+          } else {
+            animationGroup[i].start(true, 1, 1, animationGroup[i].to);
+          }
+        }
+      }
+    }
+  });
+
   let animationGroupS = new BABYLON.AnimationGroup("GroupS");
   let animationGroupA = new BABYLON.AnimationGroup("GroupA");
 
   BABYLON.SceneLoader.ImportMesh(
     "",
     "",
-    "TaycanGearRotation2.glb",
+    "TaycanGearRotation5.glb",
     scene,
     (meshes, particleSystem, skeleton, animationGroups) => {
       meshes[0].scaling = new BABYLON.Vector3(5, 5, 5);
 
       animationGroup = animationGroups;
+
+      console.log(meshes);
+      meshe = meshes;
+      for (let i = 0; i < meshes.length; i++) {
+        if (meshes[i].name == "Mesh_1") {
+          console.log(meshes[i].name.indexOf("Mesh_1"));
+          meshes[i].material.needDepthPrePass = true;
+        }
+      }
 
       // let { min, max } = meshes[0].getHierarchyBoundingVectors();
 
@@ -288,8 +359,7 @@ const createScene = () => {
       // meshes[0].showBoundingBox = true;
       for (let i = 0; i < animationGroups.length; i++) {
         if (animationGroups[i].name.indexOf("Rotation") != -1) {
-          animationGroups[i].start(true, 1, 1, animationGroups[i].to);
-
+          // animationGroups[i].start(true, 1, 1, animationGroups[i].to);
           // animationGroupA.addTargetedAnimation(
           //   animationGroups[i].targetedAnimations[0].animation,
           //   animationGroups[i].targetedAnimations[0].target
@@ -306,7 +376,7 @@ const createScene = () => {
       // animationGroupA.normalize(0, 120);
       animationGroupS.normalize(0, 180);
 
-      console.log(animationGroupA);
+      console.log(animationGroups);
 
       target.linkWithMesh(meshes[1]);
       // animationGroupA.stop();
@@ -326,14 +396,41 @@ const createScene = () => {
       //   meshes[i].material = yellowMat;
       // }
       scene.onPointerObservable.add((pointerInfo) => {
-        if (!animationGroups[1].isStarted && !opened && !animationGroupS.isStarted) {
-          for (let i = 0; i < animationGroups.length; i++) {
-            if (animationGroups[i].name.indexOf("Rotation") != -1) {
-              animationGroups[i].start(true, 1, 1, animationGroups[i].to);
+        switch (pointerInfo.type) {
+          case BABYLON.PointerEventTypes.POINTERPICK:
+            if (pointerInfo.pickInfo.hit) {
+              console.log(pointerInfo.pickInfo.pickedMesh.id);
             }
-          }
+            break;
+          // case BABYLON.PointerEventTypes.POINTERDOWN:
+
+          //     rotate = false;
+          //     console.log("sad");
+
+          //     break;
+          // case BABYLON.PointerEventTypes.POINTERUP:
+
+          //     rotate = true;
+          //     console.log("posle");
+
+          //     break;
         }
 
+        // for (let i = 0; i < meshes.length; i++) {
+        //   if (meshes[i].name.indexOf("Mesh_1_primitive") != -1) {
+        //     console.log(meshes[i].material.alpha);
+        //     if (meshes[i].material.alpha > 0) {
+        //       meshes[i].material.alpha = meshes[i].material.alpha - 0.01;
+        //     }
+        //   }
+        // }
+        // if (!animationGroups[1].isStarted && !opened && !animationGroupS.isStarted) {
+        //   for (let i = 0; i < animationGroups.length; i++) {
+        //     if (animationGroups[i].name.indexOf("Rotation") != -1) {
+        //       animationGroups[i].start(true, 1, 1, animationGroups[i].to);
+        //     }
+        //   }
+        // }
         // if (!animationGroupA.isStarted && !opened && !animationGroupS.isStarted) {
         //   // for (let i = 0; i < animationGroups.length; i++) {
         //   //   if (animationGroups[i].name.indexOf("Rotation") != -1) {

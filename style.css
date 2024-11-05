@@ -79,6 +79,14 @@ body {
   overflow-y: scroll;
 }
 
+#desTextBox li {
+  margin-bottom: 5px;
+}
+
+#desTextBox h3 {
+  align-self: flex-start;
+}
+
 #cameraBtn {
   width: 6rem;
   height: 6rem;
@@ -96,12 +104,29 @@ body {
   border-radius: 5rem;
 }
 
-#playBtn {
+#openBtn {
   width: 6rem;
   height: 6rem;
   position: absolute;
   top: 85vh;
   left: 12rem;
+  background-color: #fc3;
+  border: solid #cfcfcf 5px;
+  padding: 2rem;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cfcfcf;
+  border-radius: 5rem;
+}
+
+#playBtn {
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  top: 85vh;
+  left: 19rem;
   background-color: #fc3;
   border: solid #cfcfcf 5px;
   padding: 2rem;
