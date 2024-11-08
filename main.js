@@ -32,13 +32,13 @@ const createScene = () => {
   camera.target = new BABYLON.Vector3(0.04, 0, 0);
   camera.attachControl(canvas, true);
   camera.wheelDeltaPercentage = 0.01;
-  camera.position = new BABYLON.Vector3(0.19522278690950212, 0.32460103474098906, 2.34558162546303);
+  camera.position = new BABYLON.Vector3(0.7329886644739387, 1.4491740680004912, 10.471796766488357);
   scene.activeCamera.panningSensibility = 3000;
   camera.pinchPrecision = 100;
   camera.minZ = 0;
-  camera.lowerRadiusLimit = 1;
-  camera.upperRadiusLimit = 6;
 
+  camera.lowerRadiusLimit = 4;
+  camera.upperRadiusLimit = 20;
 
   const meshAlpha = new BABYLON.Animation(
     "meshAlpha",
@@ -115,7 +115,7 @@ const createScene = () => {
     });
     keyFramesP.push({
       frame: 180,
-      value: new BABYLON.Vector3(0.19522278690950212, 0.32460103474098906, 2.34558162546303),
+      value: new BABYLON.Vector3(0.7329886644739387, 2.3836616235438863, 10.471796766488357),
     });
     cameraStartP.setKeys(keyFramesP);
     camera.animations.push(cameraStartP);
@@ -128,7 +128,7 @@ const createScene = () => {
     });
     keyFramesPA.push({
       frame: 180,
-      value: new BABYLON.Vector3(0.610909025600203, 0.5181633819530018, 3.7643090497065965),
+      value: new BABYLON.Vector3(1.251598446235536, 2.3836616235438863, 18),
     });
     cameraPA.setKeys(keyFramesPA);
     camera.animations.push(cameraPA);
@@ -181,34 +181,213 @@ const createScene = () => {
   // label.text = "Part bla bla bla";
   // rect1.addControl(label);
 
-  let target = new BABYLON.GUI.Ellipse();
-  target.width = "40px";
-  target.height = "40px";
-  target.color = "#cfcfcf";
-  target.thickness = 4;
-  target.background = "#4f4f4e";
-  target.alpha = 0.5;
+  let target1 = new BABYLON.GUI.Rectangle();
+  target1.width = "60px";
+  target1.cornerRadius = 40;
+  target1.height = "60px";
+  // target.color = "#cfcfcf";
+  target1.thickness = 0;
+  target1.background = "#fc3";
+  target1.alpha = 1;
 
-  advancedTexture.addControl(target);
+  advancedTexture.addControl(target1);
 
-  // var line = new BABYLON.GUI.Line();
-  // line.lineWidth = 2;
-  // line.color = "#cfcfcf";
-  // line.y2 = 100;
-  // line.linkOffsetY = -20;
-  // line.alpha = 0;
+  let text1 = new BABYLON.GUI.TextBlock();
+  text1.text = "X";
+  text1.color = "black";
+  text1.fontSize = "30px";
+  text1.fontWeight = 500;
 
-  // advancedTexture.addControl(line);
+  target1.addControl(text1);
 
-  // line.connectedControl = rect1;
   let desBox = document.getElementById("desBox");
   desBox.style.left = "100vw";
 
-  // desBox.style.display = "none";
-  // let canvasZone = document.getElementById("renderCanvas");
-  // canvasZone.style.width = "100%";
+  target1.onPointerEnterObservable.add(() => {
+    target1.width = "180px";
+    text1.text = "X Gear Set";
+  });
+  target1.onPointerOutObservable.add(() => {
+    target1.width = "60px";
+    text1.text = "X";
+  });
 
-  target.onPointerClickObservable.add(() => {
+  target1.onPointerClickObservable.add(() => {
+    desBox.style.visibility = "visible";
+    console.log(desBox.style.left);
+    if (desBox.style.left == "100vw") {
+      // desBox.style.display = "flex";
+      desBox.style.left = "80vw";
+      // canvasZone.style.width = "80%";
+      // engine.resize();
+    } else {
+      // canvasZone.style.width = "100%";
+      desBox.style.left = "100vw";
+      // engine.resize();
+      // desBox.style.display = "none";
+    }
+  });
+  let target2 = new BABYLON.GUI.Rectangle();
+  target2.width = "60px";
+  target2.cornerRadius = 40;
+  target2.height = "60px";
+  // target.color = "#cfcfcf";
+  target2.thickness = 0;
+  target2.background = "#fc3";
+  target2.alpha = 1;
+
+  advancedTexture.addControl(target2);
+
+  let text2 = new BABYLON.GUI.TextBlock();
+  text2.text = "X";
+  text2.color = "black";
+  text2.fontSize = "30px";
+  text2.fontWeight = 500;
+
+  target2.addControl(text2);
+
+  target2.onPointerEnterObservable.add(() => {
+    target2.width = "180px";
+    text2.text = "X Housing";
+  });
+  target2.onPointerOutObservable.add(() => {
+    target2.width = "60px";
+    text2.text = "X";
+  });
+
+  target2.onPointerClickObservable.add(() => {
+    desBox.style.visibility = "visible";
+    console.log(desBox.style.left);
+    if (desBox.style.left == "100vw") {
+      // desBox.style.display = "flex";
+      desBox.style.left = "80vw";
+      // canvasZone.style.width = "80%";
+      // engine.resize();
+    } else {
+      // canvasZone.style.width = "100%";
+      desBox.style.left = "100vw";
+      // engine.resize();
+      // desBox.style.display = "none";
+    }
+  });
+
+  let target3 = new BABYLON.GUI.Rectangle();
+  target3.width = "60px";
+  target3.cornerRadius = 40;
+  target3.height = "60px";
+  // target.color = "#cfcfcf";
+  target3.thickness = 0;
+  target3.background = "#fc3";
+  target3.alpha = 1;
+
+  advancedTexture.addControl(target3);
+
+  let text3 = new BABYLON.GUI.TextBlock();
+  text3.text = "X";
+  text3.color = "black";
+  text3.fontSize = "30px";
+  text3.fontWeight = 500;
+
+  target3.addControl(text3);
+
+  target3.onPointerEnterObservable.add(() => {
+    target3.width = "180px";
+    text3.text = "X Motor";
+  });
+  target3.onPointerOutObservable.add(() => {
+    target3.width = "60px";
+    text3.text = "X";
+  });
+
+  target3.onPointerClickObservable.add(() => {
+    desBox.style.visibility = "visible";
+    console.log(desBox.style.left);
+    if (desBox.style.left == "100vw") {
+      // desBox.style.display = "flex";
+      desBox.style.left = "80vw";
+      // canvasZone.style.width = "80%";
+      // engine.resize();
+    } else {
+      // canvasZone.style.width = "100%";
+      desBox.style.left = "100vw";
+      // engine.resize();
+      // desBox.style.display = "none";
+    }
+  });
+
+  let target4 = new BABYLON.GUI.Rectangle();
+  target4.width = "60px";
+  target4.cornerRadius = 40;
+  target4.height = "60px";
+  // target.color = "#cfcfcf";
+  target4.thickness = 0;
+  target4.background = "#fc3";
+  target4.alpha = 1;
+
+  advancedTexture.addControl(target4);
+
+  let text4 = new BABYLON.GUI.TextBlock();
+  text4.text = "X";
+  text4.color = "black";
+  text4.fontSize = "30px";
+  text4.fontWeight = 500;
+
+  target4.addControl(text4);
+
+  target4.onPointerEnterObservable.add(() => {
+    target4.width = "180px";
+    text4.text = "X Coupling";
+  });
+  target4.onPointerOutObservable.add(() => {
+    target4.width = "60px";
+    text4.text = "X";
+  });
+
+  target4.onPointerClickObservable.add(() => {
+    desBox.style.visibility = "visible";
+    console.log(desBox.style.left);
+    if (desBox.style.left == "100vw") {
+      // desBox.style.display = "flex";
+      desBox.style.left = "80vw";
+      // canvasZone.style.width = "80%";
+      // engine.resize();
+    } else {
+      // canvasZone.style.width = "100%";
+      desBox.style.left = "100vw";
+      // engine.resize();
+      // desBox.style.display = "none";
+    }
+  });
+
+  let target5 = new BABYLON.GUI.Rectangle();
+  target5.width = "60px";
+  target5.cornerRadius = 40;
+  target5.height = "60px";
+  // target.color = "#cfcfcf";
+  target5.thickness = 0;
+  target5.background = "#fc3";
+  target5.alpha = 1;
+
+  advancedTexture.addControl(target5);
+
+  let text5 = new BABYLON.GUI.TextBlock();
+  text5.text = "X";
+  text5.color = "black";
+  text5.fontSize = "30px";
+  text5.fontWeight = 500;
+
+  target5.addControl(text5);
+
+  target5.onPointerEnterObservable.add(() => {
+    target5.width = "180px";
+    text5.text = "X Actuator";
+  });
+  target5.onPointerOutObservable.add(() => {
+    target5.width = "60px";
+    text5.text = "X";
+  });
+
+  target5.onPointerClickObservable.add(() => {
     desBox.style.visibility = "visible";
     console.log(desBox.style.left);
     if (desBox.style.left == "100vw") {
@@ -334,7 +513,12 @@ const createScene = () => {
   });
 
   let animationGroupS = new BABYLON.AnimationGroup("GroupS");
-  let animationGroupA = new BABYLON.AnimationGroup("GroupA");
+  // let animationGroupA = new BABYLON.AnimationGroup("GroupA");
+  let sphereTargetHousing = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 0.01 }, scene);
+  sphereTargetHousing.visibility = 0;
+
+  let sphereTargetMotor = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 0.01 }, scene);
+  sphereTargetMotor.visibility = 0;
 
   BABYLON.SceneLoader.ImportMesh(
     "",
@@ -342,16 +526,65 @@ const createScene = () => {
     "TaycanGearRotation5.glb",
     scene,
     (meshes, particleSystem, skeleton, animationGroups) => {
-      meshes[0].scaling = new BABYLON.Vector3(5, 5, 5);
+      meshes[0].scaling = new BABYLON.Vector3(27, 27, 27);
 
       animationGroup = animationGroups;
 
-      console.log(meshes);
       meshe = meshes;
       for (let i = 0; i < meshes.length; i++) {
+        // console.log(meshes[i].material);
+        // if (meshes[i].material != null) {
+        //   meshes[i].material._roughness = 0.1;
+        // }
+
         if (meshes[i].name == "Mesh_1") {
-          console.log(meshes[i].name.indexOf("Mesh_1"));
+          sphereTargetHousing.parent = meshes[i];
+          sphereTargetHousing.position.y = 0.04;
+
+          // console.log("Mesh position:", meshes[i].position);
+          // console.log("Mesh bounding info:", meshes[i].getBoundingInfo().boundingBox);
+          // console.log("Target position:", target2.centerY);
           meshes[i].material.needDepthPrePass = true;
+          target2.linkWithMesh(sphereTargetHousing);
+          // target2.linkOffsetY = -150;
+        }
+
+        if (meshes[i].name == "1600064752") {
+          sphereTargetMotor.parent = meshes[i];
+          // sphereTargetMotor.position.z = -0.04;
+
+          // console.log("Mesh position:", meshes[i].position);
+          // console.log("Mesh bounding info:", meshes[i].getBoundingInfo().boundingBox);
+          // console.log("Target position:", target2.centerY);
+
+          target3.linkWithMesh(sphereTargetMotor);
+        }
+        if (meshes[i].name == "1600032007_PRT__A_4.001") {
+          // sphereTargetMotor.position.z = -0.04;
+
+          // console.log("Mesh position:", meshes[i].position);
+          // console.log("Mesh bounding info:", meshes[i].getBoundingInfo().boundingBox);
+          // console.log("Target position:", target2.centerY);
+
+          target1.linkWithMesh(meshes[i]);
+        }
+        if (meshes[i].name == "Mesh_33") {
+          // sphereTargetMotor.position.z = -0.04;
+
+          // console.log("Mesh position:", meshes[i].position);
+          // console.log("Mesh bounding info:", meshes[i].getBoundingInfo().boundingBox);
+          // console.log("Target position:", target2.centerY);
+
+          target4.linkWithMesh(meshes[i]);
+        }
+        if (meshes[i].name == "Mesh_22_primitive0") {
+          // sphereTargetMotor.position.z = -0.04;
+
+          // console.log("Mesh position:", meshes[i].position);
+          // console.log("Mesh bounding info:", meshes[i].getBoundingInfo().boundingBox);
+          // console.log("Target position:", target2.centerY);
+
+          target5.linkWithMesh(meshes[i]);
         }
       }
 
@@ -379,9 +612,6 @@ const createScene = () => {
       // animationGroupA.normalize(0, 120);
       animationGroupS.normalize(0, 180);
 
-      console.log(animationGroups);
-
-      target.linkWithMesh(meshes[1]);
       // animationGroupA.stop();
       // animationGroupS.stop();
       animationGroups[0].stop();
@@ -406,19 +636,14 @@ const createScene = () => {
             }
             break;
           // case BABYLON.PointerEventTypes.POINTERDOWN:
-
           //     rotate = false;
           //     console.log("sad");
-
           //     break;
           // case BABYLON.PointerEventTypes.POINTERUP:
-
           //     rotate = true;
           //     console.log("posle");
-
           //     break;
         }
-
         // for (let i = 0; i < meshes.length; i++) {
         //   if (meshes[i].name.indexOf("Mesh_1_primitive") != -1) {
         //     console.log(meshes[i].material.alpha);
