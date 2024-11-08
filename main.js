@@ -36,6 +36,9 @@ const createScene = () => {
   scene.activeCamera.panningSensibility = 3000;
   camera.pinchPrecision = 100;
   camera.minZ = 0;
+  camera.lowerRadiusLimit = 1;
+  camera.upperRadiusLimit = 6;
+
 
   const meshAlpha = new BABYLON.Animation(
     "meshAlpha",
