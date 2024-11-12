@@ -577,7 +577,7 @@ const createScene = () => {
 
           target4.linkWithMesh(meshes[i]);
         }
-        if (meshes[i].name == "Mesh_22_primitive0") {
+        if (meshes[i].name == "Mesh_22") {
           // sphereTargetMotor.position.z = -0.04;
 
           // console.log("Mesh position:", meshes[i].position);
