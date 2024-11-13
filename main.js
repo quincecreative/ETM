@@ -482,30 +482,40 @@ const createScene = () => {
     //   horn.play();
     // }
   });
+  // let rotating = false;
+
+  // At the top of your file, create an array to store timeout IDs
+  let timeoutIds = [];
 
   document.getElementById("playBtn").addEventListener("click", function () {
     if (!opened) {
       for (let i = 0; i < meshe.length; i++) {
         if (meshe[i].name == "Mesh_1") {
-          if (meshe[i].visibility != 0) {
-            scene.beginDirectAnimation(meshe[i], [meshAlpha], 1, 60, false);
-          } else {
+          if (meshe[i].visibility != 1) {
             scene.beginDirectAnimation(meshe[i], [meshAlpha], 60, 1, false);
+          } else {
+            scene.beginDirectAnimation(meshe[i], [meshAlpha], 1, 60, false);
           }
         }
       }
 
       for (let i = 0; i < animationGroup.length; i++) {
-        if (
-          animationGroup[i].name.indexOf("Rotation") != -1 &&
-          animationGroup[i].name.indexOf("RotationTycanGear5") == -1 &&
-          animationGroup[i].name.indexOf("RotationTycanGear7") == -1 &&
-          animationGroup[i].name.indexOf("RotationTycanGear8") == -1
-        ) {
+        if (animationGroup[i].name.indexOf("Rotation") != -1) {
           if (animationGroup[i].isStarted) {
+            // Clear all stored timeouts
+            timeoutIds.forEach((id) => {
+              window.clearTimeout(id);
+            });
+            timeoutIds = []; // Reset the array
+
             animationGroup[i].stop();
           } else {
-            animationGroup[i].start(true, 1, 1, animationGroup[i].to);
+            animationGroup[i].start(false, 1, 1, 190);
+            // Store the timeout ID in our array
+            const timeoutId = setTimeout(() => {
+              animationGroup[i].start(true, 1, 190, animationGroup[i].to);
+            }, 3167);
+            timeoutIds.push(timeoutId);
           }
         }
       }
@@ -523,12 +533,13 @@ const createScene = () => {
   BABYLON.SceneLoader.ImportMesh(
     "",
     "",
-    "TaycanGearRotation6.glb",
+    "TaycanGearRotation8.glb",
     scene,
     (meshes, particleSystem, skeleton, animationGroups) => {
       meshes[0].scaling = new BABYLON.Vector3(27, 27, 27);
 
       animationGroup = animationGroups;
+      console.log(animationGroups[0]);
 
       meshe = meshes;
       for (let i = 0; i < meshes.length; i++) {
@@ -644,6 +655,17 @@ const createScene = () => {
           //     console.log("posle");
           //     break;
         }
+        // if (rotating) {
+        //   for (let i = 0; i < animationGroups.length; i++) {
+        //     if (animationGroups[i].name.indexOf("Rotation") != -1) {
+        //       if (animationGroups[0].isStarted) {
+        //         rotating = true;
+        //         animationGroups[i].start(true, 1, 190, animationGroups[i].to);
+        //       }
+        //     }
+        //   }
+        // }
+
         // for (let i = 0; i < meshes.length; i++) {
         //   if (meshes[i].name.indexOf("Mesh_1_primitive") != -1) {
         //     console.log(meshes[i].material.alpha);
