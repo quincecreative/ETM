@@ -640,21 +640,21 @@ const createScene = () => {
       //   meshes[i].material = yellowMat;
       // }
       scene.onPointerObservable.add((pointerInfo) => {
-        switch (pointerInfo.type) {
-          case BABYLON.PointerEventTypes.POINTERPICK:
-            if (pointerInfo.pickInfo.hit) {
-              console.log(pointerInfo.pickInfo.pickedMesh.id);
-            }
-            break;
-          // case BABYLON.PointerEventTypes.POINTERDOWN:
-          //     rotate = false;
-          //     console.log("sad");
-          //     break;
-          // case BABYLON.PointerEventTypes.POINTERUP:
-          //     rotate = true;
-          //     console.log("posle");
-          //     break;
-        }
+        // switch (pointerInfo.type) {
+        //   case BABYLON.PointerEventTypes.POINTERPICK:
+        //     if (pointerInfo.pickInfo.hit) {
+        //       console.log(pointerInfo.pickInfo.pickedMesh.id);
+        //     }
+        //     break;
+        //   // case BABYLON.PointerEventTypes.POINTERDOWN:
+        //   //     rotate = false;
+        //   //     console.log("sad");
+        //   //     break;
+        //   // case BABYLON.PointerEventTypes.POINTERUP:
+        //   //     rotate = true;
+        //   //     console.log("posle");
+        //   //     break;
+        // }
         // if (rotating) {
         //   for (let i = 0; i < animationGroups.length; i++) {
         //     if (animationGroups[i].name.indexOf("Rotation") != -1) {
