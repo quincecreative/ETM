@@ -324,7 +324,7 @@ const createScene = () => {
 
   target2.onPointerClickObservable.add(() => {
     desBoxText.innerHTML =
-      " <h2>Housing</h2><ul><li>Our state-of-the-art differential housings can be tailored to meet the required customer packaging spaces and interface dimensions.</li><li>Friction coupling is nested within the differential housing.</li><li>The coupling can be arranged for symmetric or asymmetric differential center layouts.<li></li>Final drive gears can be welded or bolted, depending on customer preferences. </li></ul>";
+      " <h2>Housing</h2><ul><li>Our state-of-the-art differential housings can be tailored to meet the required customer packaging spaces and interface dimensions.</li><li>Friction coupling is nested within the differential housing.</li><li>The coupling can be arranged for symmetric or asymmetric differential center layouts.</li><li>Final drive gears can be welded or bolted, depending on customer preferences. </li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
 
