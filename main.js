@@ -456,8 +456,8 @@ const createScene = () => {
   // });
 
   target4.onPointerClickObservable.add(() => {
-    desBoxText.innerHTML =
-      " <h2>Coupling</h2><ul><li>Standardized clutch diameters and friction material to reduce application-specific validation efforts</li><li>Clutch capacity of up to 3000Nm</li><li>Compatible with various axle and transmission oils</li><li>Superior drag torque performance</li><li>Excellent release response time and high control accuracy</li></ul>";
+   desBoxText.innerHTML =
+      " <h2>Coupling</h2><ul><li>Standardized clutch diameters and friction material to reduce application-specific validation efforts</li><li>Clutch capacity of up to 3000Nm</li><li>Compatible with various axle and transmission oils</li><li>Superior drag torque performance</li><li> Excellent release response time and high control accuracy</li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
 
@@ -523,7 +523,7 @@ const createScene = () => {
 
   target5.onPointerClickObservable.add(() => {
     desBoxText.innerHTML =
-      " <h2>Actuator</h2><ul><li>Multiple standardized diameters available in line with chosen clutch size</li><li>Several reduction gear ratios available to enable use of multiple motor technologies.</li><li>Optimized ball tracks for highest performance and minimum power input<li></li>Seamless control of coupling actuation force</li></li>Excellent response time, system low power consumption</li></ul>";
+      " <h2>Actuator</h2><ul><li>Multiple standardized diameters available in line with chosen clutch size</li><li>Several reduction gear ratios available to enable use of multiple motor technologies.</li><li>Optimized ball tracks for highest performance and minimum power input</li><li>Seamless control of coupling actuation force</li><li>Excellent response time, system low power consumption</li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
 
