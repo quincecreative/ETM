@@ -457,7 +457,7 @@ const createScene = () => {
 
   target4.onPointerClickObservable.add(() => {
     desBoxText.innerHTML =
-      " <h2>Coupling</h2><ul><li>Standardized clutch diameters and friction material to reduce application-specific validation efforts</li><li>Clutch capacity of up to 3000Nm</li><li>Compatible with various axle and transmission oils<li></li>Superior drag torque performance</li></li>Excellent release response time and high control accuracy</li></ul>";
+      " <h2>Coupling</h2><ul><li>Standardized clutch diameters and friction material to reduce application-specific validation efforts</li><li>Clutch capacity of up to 3000Nm</li><li>Compatible with various axle and transmission oils</li><li>Superior drag torque performance</li><li>Excellent release response time and high control accuracy</li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
 
