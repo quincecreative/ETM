@@ -695,7 +695,7 @@ const createScene = () => {
   BABYLON.SceneLoader.ImportMesh(
     "",
     "",
-    "TaycanGearRotation10.glb",
+    "TaycanGearRotation11.glb",
     scene,
     (meshes, particleSystem, skeleton, animationGroups) => {
       meshes[0].scaling = new BABYLON.Vector3(27, 27, 27);
