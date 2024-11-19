@@ -260,6 +260,7 @@ const createScene = () => {
       " <h2>Gear Set</h2><ul><li>Our products cover the required torque range for passenger and light commercial vehicles, independent of propulsion systems</li><li>Available bevel gear sizes for Limited Slip Differentials (eLSD) applications range from a spherical diameter of 89mm to 120mm </li><li>Tooth counts allows for assembly as 2-pinion or 4-pinion variants </li ><li>Flat-back side gear design enables lowest backlash and the option of selective shimming, while providing the smallest bearing span </li><li>Inner disc carrier integrated in side gear. </li> </ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
+     image.src = "geat.JPG";
 
     // canvasZone.style.width = "100%";
     desBox.style.zIndex = 101;
@@ -327,6 +328,7 @@ const createScene = () => {
       " <h2>Housing</h2><ul><li>Our state-of-the-art differential housings can be tailored to meet the required customer packaging spaces and interface dimensions</li><li>Friction coupling is nested within the differential housing</li><li>The coupling can be arranged for symmetric or asymmetric differential center layouts</li><li>Final drive gears can be welded or bolted, depending on customer preferences.</li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
+     image.src = "housing.JPG";
 
     // canvasZone.style.width = "100%";
     desBox.style.zIndex = 101;
@@ -395,6 +397,7 @@ const createScene = () => {
       " <h2>Motor</h2><ul><li>Various options are available, depending on vehicle infrastructure and customer preferences<ul><li>Brushed DC Motor (BDC)</li><li>Brush-less DC Motors (BLDC)</li></ul></li><li>Controls and power stages can be integrated into existing ECU or inverter, and we can provide separate ECU </li><li>A full and continuous lock-up feature is available.</li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
+     image.src = "motor.JPG";
 
     // canvasZone.style.width = "100%";
     desBox.style.zIndex = 101;
@@ -460,6 +463,7 @@ const createScene = () => {
       " <h2>Coupling</h2><ul><li>Standardised clutch diameters and friction material to reduce application-specific validation efforts</li><li>Clutch capacity of up to 3000Nm</li><li>Compatible with various axle and transmission oils</li><li>Superior drag torque performance</li><li> Excellent release response time and high control accuracy.</li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
+     image.src = "coupling.JPG";
 
     // canvasZone.style.width = "100%";
     desBox.style.zIndex = 101;
@@ -526,6 +530,7 @@ const createScene = () => {
       " <h2>Actuator</h2><ul><li>Multiple standardised diameters available in line with chosen clutch size</li><li>Several reduction gear ratios available to enable use of multiple motor technologies</li><li>Optimised ball tracks for highest performance and minimum power input</li><li>Seamless control of coupling actuation force</li><li>Excellent response time, system low power consumption.</li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
+      image.src = "actuator.JPG";
 
     // canvasZone.style.width = "100%";
     desBox.style.zIndex = 101;
