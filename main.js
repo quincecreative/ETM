@@ -257,7 +257,7 @@ const createScene = () => {
 
   target1.onPointerClickObservable.add(() => {
     desBoxText.innerHTML =
-      " <h2>Gear Set</h2><ul><li>Our products cover the required torque range for passenger and light commercial vehicles, independent of propulsion systems</li><li>Available bevel gear sizes for Limited Slip Differentials (eLSD) applications range from a spherical diameter of 89mm to 120mm </li><li>Tooth counts allows for assembly as 2-pinion or 4-pinion variants </li ><li>Flat-back side gear design enables lowest backlash and the option of selective shimming, while providing the smallest bearing span </li><li>Inner disc carrier integrated in side gear. </li> </ul>";
+      " <h2>Gear Set</h2><ul><li>GKN Automotive products cover the required torque range for passenger and light commercial vehicles, independent of propulsion system</li><li>Available bevel gear sizes for Limited Slip Differentials (eLSD) applications range from a spherical diameter of 89mm to 120mm</li><li>Tooth counts allow to assemble as 2-pinion or 4-pinion variants</li ><li>Flat-back side gear design enables lowest backlash and the option of selective shimming, while providing the smallest bearing span</li><li>Inner disc carrier integrated in side gear.</li> </ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
      image.src = "geat.JPG";
@@ -394,7 +394,7 @@ const createScene = () => {
 
   target3.onPointerClickObservable.add(() => {
     desBoxText.innerHTML =
-      " <h2>Motor</h2><ul><li>Various options are available, depending on vehicle infrastructure and customer preferences<ul><li>Brushed DC Motor (BDC)</li><li>Brush-less DC Motors (BLDC)</li></ul></li><li>Controls and power stages can be integrated into existing ECU or inverter, and we can provide separate ECU </li><li>A full and continuous lock-up feature is available.</li></ul>";
+      " <h2>Motor</h2><ul><li>Various options are available, depending on vehicle infrastructure and customer preferences<ul><li>Brushed DC Motor (BDC)</li><li>Brush-less DC Motors (BLDC)</li></ul></li><li>Controls and power stages can be integrated into existing ECU or inverter, a separate ECU can be provided by GKN Automotive </li><li>Full and continuous lock-up feature is available.</li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
      image.src = "motor.JPG";
