@@ -250,7 +250,7 @@ const createScene = () => {
 
   target1.onPointerClickObservable.add(() => {
     desBoxText.innerHTML =
-      " <h2>Gear Set</h2><ul><li>GKN Automotive products cover the required torque range for passenger and light commercial vehicles, independent of propulsion system</li><li>Available bevel gear sizes for Limited Slip Differentials (eLSD) applications range from a spherical diameter of 89mm to 120mm</li><li>Tooth counts allow to assemble as 2-pinion or 4-pinion variants</li ><li>Flat-back side gear design enables lowest backlash and the option of selective shimming, while providing the smallest bearing span</li><li>Inner disc carrier integrated in side gear.</li> </ul>";
+      " <h2>Gear Set</h2><ul><li>GKN Automotive products cover the required torque range for passenger and light commercial vehicles, independent of propulsion system</li><li>Available bevel gear sizes for Limited Slip Differentials (eLSD) applications range from a spherical diameter of 89mm to 120mm</li><li>Tooth counts allow to assemble as 2-pinion or 4-pinion variants</li ><li>Flat-back side gear design enables lowest backlash and the option of selective shimming, while providing the smallest bearing span</li><li>Inner disc carrier integrated in side gear</li> </ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
      image.src = "geat.JPG";
@@ -318,7 +318,7 @@ const createScene = () => {
 
   target2.onPointerClickObservable.add(() => {
     desBoxText.innerHTML =
-      " <h2>Housing</h2><ul><li>Our state-of-the-art differential housings can be tailored to meet the required customer packaging spaces and interface dimensions</li><li>Friction coupling is nested within the differential housing</li><li>The coupling can be arranged for symmetric or asymmetric differential center layouts</li><li>Final drive gears can be welded or bolted, depending on customer preferences.</li></ul>";
+      " <h2>Housing</h2><ul><li>Our state-of-the-art differential housings can be tailored to meet the required customer packaging spaces and interface dimensions</li><li>Friction coupling is nested within the differential housing</li><li>The coupling can be arranged for symmetric or asymmetric differential center layouts</li><li>Final drive gears can be welded or bolted, depending on customer preferences</li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
      image.src = "housing.JPG";
@@ -387,7 +387,7 @@ const createScene = () => {
 
   target3.onPointerClickObservable.add(() => {
     desBoxText.innerHTML =
-      " <h2>Motor</h2><ul><li>Various options are available, depending on vehicle infrastructure and customer preferences<ul><li>Brushed DC Motor (BDC)</li><li>Brush-less DC Motors (BLDC)</li></ul></li><li>Controls and power stages can be integrated into existing ECU or inverter, a separate ECU can be provided by GKN Automotive </li><li>Full and continuous lock-up feature is available.</li></ul>";
+      " <h2>Motor</h2><ul><li>Various options are available, depending on vehicle infrastructure and customer preferences<ul><li>Brushed DC Motor (BDC)</li><li>Brush-less DC Motors (BLDC)</li></ul></li><li>Controls and power stages can be integrated into existing ECU or inverter, a separate ECU can be provided by GKN Automotive </li><li>Full and continuous lock-up feature is available</li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
      image.src = "motor.JPG";
@@ -453,7 +453,7 @@ const createScene = () => {
 
   target4.onPointerClickObservable.add(() => {
    desBoxText.innerHTML =
-      " <h2>Coupling</h2><ul><li>Standardised clutch diameters and friction material to reduce application-specific validation efforts</li><li>Clutch capacity of up to 3000Nm</li><li>Compatible with various axle and transmission oils</li><li>Superior drag torque performance</li><li> Excellent release response time and high control accuracy.</li></ul>";
+      " <h2>Coupling</h2><ul><li>Standardised clutch diameters and friction material to reduce application-specific validation efforts</li><li>Clutch capacity of up to 3000Nm</li><li>Compatible with various axle and transmission oils</li><li>Superior drag torque performance</li><li> Excellent release response time and high control accuracy</li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
      image.src = "coupling.JPG";
@@ -520,7 +520,7 @@ const createScene = () => {
 
   target5.onPointerClickObservable.add(() => {
     desBoxText.innerHTML =
-      " <h2>Actuator</h2><ul><li>Multiple standardised diameters available in line with chosen clutch size</li><li>Several reduction gear ratios available to enable use of multiple motor technologies</li><li>Optimised ball tracks for highest performance and minimum power input</li><li>Seamless control of coupling actuation force</li><li>Excellent response time, system low power consumption.</li></ul>";
+      " <h2>Actuator</h2><ul><li>Multiple standardised diameters available in line with chosen clutch size</li><li>Several reduction gear ratios available to enable use of multiple motor technologies</li><li>Optimised ball tracks for highest performance and minimum power input</li><li>Seamless control of coupling actuation force</li><li>Excellent response time, system low power consumption</li></ul>";
     // desBox.style.visibility = "visible";
     // console.log(desBox.style.left);
       image.src = "actuator.JPG";
