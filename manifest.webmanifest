@@ -1,0 +1,15 @@
+{
+  "background_color": "white",
+  "description": "ETM model",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "GKN Icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg"
+    }
+  ],
+  "name": "ETM",
+  "short_name": "ETM",
+  "start_url": "/ETM/index.html"
+}
