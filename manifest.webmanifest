@@ -4,7 +4,7 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "GKN Icon.png",
+      "src": "Icon.png",
       "sizes": "150x150",
       "type": "image/png"
     }
