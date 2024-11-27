@@ -138,11 +138,11 @@ body {
 }
 
 #cameraBtn {
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   position: absolute;
-  top: 85vh;
-  left: 5rem;
+  top: 85dvh;
+  left: 2rem;
   background-color: #fc3;
   border: solid #cfcfcf 5px;
   padding: 2rem;
@@ -155,11 +155,11 @@ body {
 }
 
 #openBtn {
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   position: absolute;
-  top: 85vh;
-  left: 12rem;
+  top: 85dvh;
+  left: 7rem;
   background-color: #fc3;
   border: solid #cfcfcf 5px;
   padding: 2rem;
@@ -172,11 +172,11 @@ body {
 }
 
 #playBtn {
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   position: absolute;
-  top: 85vh;
-  left: 19rem;
+  top: 85dvh;
+  left: 12rem;
   background-color: #fc3;
   border: solid #cfcfcf 5px;
   padding: 2rem;
@@ -203,17 +203,17 @@ body {
 }
 
 #topPart {
-  width: 80%;
+  width: 95%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: cener;
+  justify-content: flex-start;
 }
 
 #topPart h2 {
   position: absolute;
   top: 7vh;
   left: 2vw;
-  font-size: 2.3em;
+  font-size: 2em;
   color: white;
 }
