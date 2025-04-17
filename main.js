@@ -570,20 +570,20 @@ const createScene = () => {
       // target4.alpha = 0;
       // target5.alpha = 0;
       // animationGroups[0].stop();
-      if (animationGroupS.isStarted) {
-        let masterFrame = animationGroupS.animatables[0].masterFrame;
-        scene.beginDirectAnimation(camera, [cameraStartP], 1, 320, false);
+      // if (animationGroupS.isStarted) {
+      //   let masterFrame = animationGroupS.animatables[0].masterFrame;
+      //   scene.beginDirectAnimation(camera, [cameraStartP], 1, 320, false);
 
-        animationGroupS.stop();
+      //   animationGroupS.stop();
 
-        animationGroupS.start(false, 1, masterFrame, 1);
-      } else {
-        scene.beginDirectAnimation(camera, [cameraStartP], 1, 320, false);
+      //   animationGroupS.start(false, 1, masterFrame, 1);
+      // } else {
+      //   scene.beginDirectAnimation(camera, [cameraStartP], 1, 320, false);
 
-        animationGroupS.stop();
+      //   animationGroupS.stop();
 
-        animationGroupS.start(false, 1, animationGroupS.to, 1);
-      }
+      //   animationGroupS.start(false, 1, animationGroupS.to, 1);
+      // }
 
       // animationGroups[0].play();
 
